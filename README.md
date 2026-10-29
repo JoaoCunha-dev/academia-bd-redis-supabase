@@ -110,6 +110,6 @@ academia-bd/
 └── requirements.txt
 ```
 
-## Autor
+## Aluno
 
-João Victor — Engenharia de Software, UNIFSA.
+João Victor da Cunha Oliveira.
