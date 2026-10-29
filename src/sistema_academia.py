@@ -1,12 +1,10 @@
-"""Regras de negócio: acesso ao Supabase (PostgreSQL) com cache no Redis."""
+
 from cache import buscar_com_cache, invalidar, incrementar_checkins_hoje
 from config import CACHE_TTL
 from db import get_connection
 
 CHAVE_RANKING = "academia:ranking"
 
-
-# ---------- Leituras ----------
 
 def listar_planos():
     with get_connection() as conn, conn.cursor() as cur:
@@ -50,10 +48,7 @@ def total_checkins(aluno_id):
         return cur.fetchone()[0]
 
 
-# ---------- Escritas (sempre invalidam o cache) ----------
-
 def _invalidar_ranking():
-    # apaga todas as variações do ranking
     from cache import cliente
     try:
         for chave in cliente().scan_iter(f"{CHAVE_RANKING}:*"):
