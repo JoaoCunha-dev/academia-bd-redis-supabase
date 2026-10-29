@@ -1,4 +1,4 @@
-"""Testa as conexões com o Supabase e com o Redis."""
+
 from cache import redis_online
 from db import get_connection
 
