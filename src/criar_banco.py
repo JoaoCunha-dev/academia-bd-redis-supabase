@@ -1,11 +1,4 @@
-"""
-Cria as tabelas, view, function e procedure no Supabase e (opcionalmente)
-insere dados de teste.
 
-Uso:
-    python src/criar_banco.py              # cria estrutura + dados de teste
-    python src/criar_banco.py --sem-dados  # só a estrutura
-"""
 import sys
 from pathlib import Path
 
