@@ -1,4 +1,4 @@
-"""Configurações lidas do arquivo .env (na raiz do projeto ou dentro de src/)."""
+
 import os
 from pathlib import Path
 from dotenv import load_dotenv
