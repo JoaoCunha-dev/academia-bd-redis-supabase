@@ -1,4 +1,4 @@
-"""Interface gráfica (Tkinter) do sistema Academia BD."""
+
 import tkinter as tk
 from tkinter import messagebox, ttk
 
@@ -17,7 +17,7 @@ class App(tk.Tk):
         self.geometry("980x640")
         self.minsize(900, 600)
 
-        self.planos = []          # [(id, nome, valor)]
+        self.planos = []
         self.aluno_selecionado = None
 
         self._montar_cabecalho()
@@ -33,7 +33,6 @@ class App(tk.Tk):
         self._montar_alunos()
         self.after(200, self._carregar_inicial)
 
-    # ---------------- Cabeçalho ----------------
     def _montar_cabecalho(self):
         topo = ttk.Frame(self)
         topo.pack(fill="x", padx=10, pady=10)
@@ -51,7 +50,6 @@ class App(tk.Tk):
         self.lbl_checkins.config(
             text=f"Check-ins hoje (Redis): {valor if valor is not None else '-'}")
 
-    # ---------------- Aba Ranking ----------------
     def _montar_ranking(self):
         barra = ttk.Frame(self.aba_ranking)
         barra.pack(fill="x", padx=10, pady=10)
@@ -102,7 +100,6 @@ class App(tk.Tk):
         self.lbl_origem.config(text="Cache limpo. A próxima consulta vai ao Supabase.", fg=CINZA)
         self.lbl_detalhe.config(text="")
 
-    # ---------------- Aba Alunos ----------------
     def _montar_alunos(self):
         busca = ttk.Frame(self.aba_alunos)
         busca.pack(fill="x", padx=10, pady=10)
