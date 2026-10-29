@@ -1,4 +1,3 @@
-"""Conexão com o PostgreSQL do Supabase."""
 import psycopg2
 from config import DATABASE_URL
 
