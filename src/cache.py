@@ -1,11 +1,4 @@
-"""
-Camada de cache com Redis (padrão cache-aside).
 
-Usos do Redis neste projeto:
-  1. Cache do ranking de alunos (consulta agregada pesada na VIEW do Supabase),
-     com TTL e invalidação sempre que os dados mudam.
-  2. Contador de check-ins do dia (INCR), atualizado em tempo real.
-"""
 import json
 import time
 from datetime import date
@@ -37,10 +30,6 @@ def redis_online():
 
 
 def buscar_com_cache(chave, ttl_segundos, funcao_busca):
-    """
-    Tenta o Redis primeiro; se não houver (ou o Redis estiver fora), busca no
-    Supabase e guarda o resultado. Retorna um dicionário com os dados e a origem.
-    """
     inicio = time.perf_counter()
     redis_ok = True
 
@@ -77,7 +66,6 @@ def ttl_restante(chave):
 
 
 def invalidar(*chaves):
-    """Apaga chaves do cache (chamado após cadastrar, editar, excluir ou check-in)."""
     try:
         cliente().delete(*chaves)
     except redis.RedisError:
