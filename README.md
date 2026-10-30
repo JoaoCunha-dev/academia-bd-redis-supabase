@@ -109,7 +109,16 @@ academia-bd/
 ├── .env.example
 └── requirements.txt
 ```
+LINK DO VIDEO
+https://drive.google.com/file/d/1GqcRxIVLcMYEG5NK2h2V6cuQxRKzVoT4/view?usp=sharing
 
 ## Aluno
 
 João Victor da Cunha Oliveira.
+
+
+
+
+
+
+
